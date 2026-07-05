@@ -8,36 +8,6 @@ An end-to-end, high-performance event-driven trading engine designed to simulate
 
 The backtester relies on a central **Event Queue** to decouple data processing, strategy generation, risk management, and market execution.
 
-              +-----------------------+
-              |  Historical Data Feed |
-              +-----------+-----------+
-                          |
-                     MarketEvent
-                          v
-              +-----------+-----------+
-              |      Event Queue      | <=========+
-              +-----------+-----------+           |
-                          |                       |
-             MarketEvent  |  SignalEvent          | Order/Fill Events
-                          v                       |
-     +--------------------+--------------------+  |
-     |                                         |  |
-     v                                         v  |
-+--------+--------+                       +--------+--+-----+
-| Trading Strategy|                       | Portfolio & Risk|
-|     Module      |                       |    Management   |
-+--------+--------+                       +--------+--------+
-|                                         |
-| SignalEvent                             | OrderEvent
-+------------------->====================+
-|
-v
-+--------+--------+
-|    Execution    |
-| Sim / Brokerage |
-+-----------------+
-
-
 ### Components Matrix
 
 1. **Event Infrastructure (`Event`, `MarketEvent`, `SignalEvent`, `OrderEvent`, `FillEvent`)**: Polymorphic types passed as smart pointers (`std::shared_ptr`) via a centralized `std::queue`.
