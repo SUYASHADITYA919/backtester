@@ -84,10 +84,13 @@ sudo apt install build-essential cmake ninja-build gdb
 ⚙️ Configuration Setup
 
 1. Build & Run Automation (.vscode/tasks.json)
+
+```bash
+
 JSON
 {
     "version": "2.0.0",
-    "tasks": [
+    "tasks": 
         {
             "label": "CMake Build",
             "type": "shell",
@@ -95,18 +98,22 @@ JSON
             "group": {
                 "kind": "build",
                 "isDefault": true
-            },
-            "dependsOn": "CMake Configure"
         },
+            "dependsOn": "CMake Configure"
+        
         {
             "label": "CMake Configure",
             "type": "shell",
             "command": "cmake -B build"
         }
-    ]
-}
+},
+
+```
 
 2. Native C++ Debugger Targets (.vscode/launch.json)
+
+```bash
+
 JSON
 {
     "version": "0.2.0",
@@ -132,6 +139,8 @@ JSON
         }
     ]
 }
+
+```
 
 🚀 Execution & Compilation
 
