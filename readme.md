@@ -1,12 +1,21 @@
 ## Backtester in C++
 
-An end-to-end, high-performance event-driven quant trading engine designed to simulate historical trading strategies with modular infrastructure components. Unlike synchronous, vector-based architectures (e.g., Python/Pandas loops) that suffer from look-ahead bias and unrealistic execution modeling, this project uses an asynchronous-style event loop processing framework.
+An end-to-end, high-performance event-driven quant trading engine designed to simulate historical trading strategies with modular infrastructure components.
 
 ---
 
 ## 🏗️ Architecture Overview
 
 The backtester relies on a central **Event Queue** to decouple data processing, strategy generation, risk management, and market execution.
+
+---
+
+## 🛠️ Tech Stack Matrix
+
+1. C++
+2. Cmake
+
+---
 
 ### Components Matrix
 
